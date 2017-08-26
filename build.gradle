@@ -1,0 +1,25 @@
+group 'uk.co.mruoc'
+version '1.0.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'http://dynamodb-local.s3-website-us-west-2.amazonaws.com/release' }
+}
+
+dependencies {
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.184'
+    compile group: 'com.github.michaelruocco', name: 'json-logger', version: '1.0.1'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
+    testCompile group: 'com.amazonaws', name: 'DynamoDBLocal', version: '[1.11.86,2.0)'
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.24'
+}
+
+test {
+    systemProperty 'sqlite4java.library.path', './lib/sqlite4java'
+}
