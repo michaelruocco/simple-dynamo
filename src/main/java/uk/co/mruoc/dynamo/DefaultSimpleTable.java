@@ -15,8 +15,6 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 
 public class DefaultSimpleTable implements SimpleTable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DefaultSimpleTable.class);
-
     private final AmazonDynamoDB amazonDynamoDB;
     private final DynamoDB dynamoDB;
 

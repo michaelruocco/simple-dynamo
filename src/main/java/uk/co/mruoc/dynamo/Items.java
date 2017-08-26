@@ -73,7 +73,7 @@ public class Items implements Iterable<Item> {
         }
 
         private void setItems(ItemCollection<ScanOutcome> outcomes) {
-            items.clear();;
+            items.clear();
             outcomes.forEach(o -> items.add(o));
         }
 
