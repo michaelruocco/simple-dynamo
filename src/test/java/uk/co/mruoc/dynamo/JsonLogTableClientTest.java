@@ -12,7 +12,7 @@ import uk.co.mruoc.log.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class JsonLogSimpleTableTest {
+public class JsonLogTableClientTest {
 
     private static final String TABLE_NAME = "testTable";
     private static final String ID_FIELD_NAME = "id";
@@ -25,13 +25,13 @@ public class JsonLogSimpleTableTest {
             .setIdFieldName(ID_FIELD_NAME)
             .build();
 
-    private SimpleTable client;
+    private TableClient client;
 
     @Before
     public void setUp() {
         AmazonDynamoDB amazonDynamoDB = localDynamoRule.getAmazonDynamoDb();
-        Logger logger = LoggerFactory.getLogger(JsonLogSimpleTableTest.class);
-        client = new JsonLogSimpleTable(amazonDynamoDB, logger);
+        Logger logger = LoggerFactory.getLogger(JsonLogTableClientTest.class);
+        client = new JsonLogTableClient(amazonDynamoDB, logger);
         client.createTable(tableConfig);
     }
 

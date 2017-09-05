@@ -5,20 +5,18 @@ import com.amazonaws.services.dynamodbv2.document.*;
 import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 import com.amazonaws.services.dynamodbv2.model.*;
 import uk.co.mruoc.dynamo.Items.ItemsBuilder;
-import uk.co.mruoc.log.Logger;
-import uk.co.mruoc.log.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
 import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 
-public class DefaultSimpleTable implements SimpleTable {
+public class DefaultTableClient implements TableClient {
 
     private final AmazonDynamoDB amazonDynamoDB;
     private final DynamoDB dynamoDB;
 
-    public DefaultSimpleTable(AmazonDynamoDB amazonDynamoDB) {
+    public DefaultTableClient(AmazonDynamoDB amazonDynamoDB) {
         this.amazonDynamoDB = amazonDynamoDB;
         this.dynamoDB = new DynamoDB(amazonDynamoDB);
     }

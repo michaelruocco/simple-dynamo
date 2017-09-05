@@ -5,7 +5,7 @@ import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SimpleTableConfigTest {
+public class TableClientConfigTest {
 
     private TableConfigBuilder builder = new TableConfigBuilder();
 

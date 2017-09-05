@@ -5,11 +5,11 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import org.slf4j.Logger;
 
-public class LogSimpleTable extends DefaultSimpleTable {
+public class LogTableClient extends DefaultTableClient {
 
     private final Logger logger;
 
-    public LogSimpleTable(AmazonDynamoDB amazonDynamoDB, Logger logger) {
+    public LogTableClient(AmazonDynamoDB amazonDynamoDB, Logger logger) {
         super(amazonDynamoDB);
         this.logger = logger;
     }

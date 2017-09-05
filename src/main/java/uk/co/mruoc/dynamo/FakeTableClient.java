@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class FakeSimpleTable implements SimpleTable {
+public class FakeTableClient implements TableClient {
 
     private TableConfig lastWrittenTableConfig;
     private Item lastWrittenItem;
@@ -119,7 +119,7 @@ public class FakeSimpleTable implements SimpleTable {
         Iterator<KeyAttribute> attributes = key.getComponents().iterator();
         while(attributes.hasNext()) {
             KeyAttribute attribute = attributes.next();
-            if (attribute.getName().equals("id")) {
+            if (attribute.getName().equals(lastWrittenTableConfig.getIdFieldName())) {
                 return attribute.getValue().toString();
             }
         }

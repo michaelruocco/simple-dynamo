@@ -6,9 +6,9 @@ import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FakeSimpleTableTest {
+public class FakeTableClientTest {
 
-    private final FakeSimpleTable table = new FakeSimpleTable();
+    private final FakeTableClient table = new FakeTableClient();
 
     private final FakeItem item = new FakeItem();
     private final TableConfig config = new TableConfigBuilder()

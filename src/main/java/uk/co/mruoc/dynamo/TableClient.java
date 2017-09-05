@@ -3,7 +3,7 @@ package uk.co.mruoc.dynamo;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 
-public interface SimpleTable {
+public interface TableClient {
 
     void createTable(TableConfig tableConfig);
 

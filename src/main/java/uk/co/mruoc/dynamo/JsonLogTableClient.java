@@ -4,11 +4,11 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.*;
 import uk.co.mruoc.log.Logger;
 
-public class JsonLogSimpleTable extends DefaultSimpleTable {
+public class JsonLogTableClient extends DefaultTableClient {
 
     private final Logger logger;
 
-    public JsonLogSimpleTable(AmazonDynamoDB amazonDynamoDB, Logger logger) {
+    public JsonLogTableClient(AmazonDynamoDB amazonDynamoDB, Logger logger) {
         super(amazonDynamoDB);
         this.logger = logger;
     }

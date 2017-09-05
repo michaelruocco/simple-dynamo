@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FakeSimpleTableExceptionTest {
+public class FakeTableClientExceptionTest {
 
     @Test
     public void shouldReturnMessage() {

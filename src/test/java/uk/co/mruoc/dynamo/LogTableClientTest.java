@@ -6,11 +6,13 @@ import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DefaultSimpleTableTest {
+public class LogTableClientTest {
 
     private static final String TABLE_NAME = "testTable";
     private static final String ID_FIELD_NAME = "id";
@@ -23,12 +25,13 @@ public class DefaultSimpleTableTest {
             .setIdFieldName(ID_FIELD_NAME)
             .build();
 
-    private SimpleTable client;
+    private TableClient client;
 
     @Before
     public void setUp() {
         AmazonDynamoDB amazonDynamoDB = localDynamoRule.getAmazonDynamoDb();
-        client = new DefaultSimpleTable(amazonDynamoDB);
+        Logger logger = LoggerFactory.getLogger(LogTableClientTest.class);
+        client = new LogTableClient(amazonDynamoDB, logger);
         client.createTable(tableConfig);
     }
 
