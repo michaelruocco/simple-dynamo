@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
+import uk.co.mruoc.dynamo.test.FakeItem;
 import uk.co.mruoc.log.Logger;
 import uk.co.mruoc.log.LoggerFactory;
 

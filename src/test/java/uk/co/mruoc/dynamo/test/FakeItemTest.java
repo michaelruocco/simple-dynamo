@@ -1,7 +1,8 @@
-package uk.co.mruoc.dynamo;
+package uk.co.mruoc.dynamo.test;
 
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import org.junit.Test;
+import uk.co.mruoc.dynamo.test.FakeItem;
 
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 

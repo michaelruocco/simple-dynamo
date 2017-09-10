@@ -1,4 +1,4 @@
-package uk.co.mruoc.dynamo;
+package uk.co.mruoc.dynamo.test;
 
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;

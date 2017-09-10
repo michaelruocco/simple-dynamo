@@ -3,6 +3,7 @@ package uk.co.mruoc.dynamo;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import org.junit.Test;
 import uk.co.mruoc.dynamo.Items.ItemsBuilder;
+import uk.co.mruoc.dynamo.test.FakeItem;
 
 import java.util.Arrays;
 import java.util.Iterator;

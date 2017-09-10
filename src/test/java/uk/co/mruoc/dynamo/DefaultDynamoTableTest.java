@@ -4,6 +4,8 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import org.junit.Test;
 import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
+import uk.co.mruoc.dynamo.test.FakeItem;
+import uk.co.mruoc.dynamo.test.FakeTableClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

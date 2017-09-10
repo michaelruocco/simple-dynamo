@@ -1,7 +1,9 @@
-package uk.co.mruoc.dynamo;
+package uk.co.mruoc.dynamo.test;
 
 import com.amazonaws.services.dynamodbv2.document.Item;
 import org.junit.Test;
+import uk.co.mruoc.dynamo.Items;
+import uk.co.mruoc.dynamo.TableConfig;
 import uk.co.mruoc.dynamo.TableConfig.TableConfigBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;

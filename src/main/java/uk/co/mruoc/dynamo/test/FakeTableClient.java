@@ -1,7 +1,10 @@
-package uk.co.mruoc.dynamo;
+package uk.co.mruoc.dynamo.test;
 
 import com.amazonaws.services.dynamodbv2.document.*;
+import uk.co.mruoc.dynamo.Items;
 import uk.co.mruoc.dynamo.Items.ItemsBuilder;
+import uk.co.mruoc.dynamo.TableClient;
+import uk.co.mruoc.dynamo.TableConfig;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -123,7 +126,7 @@ public class FakeTableClient implements TableClient {
                 return attribute.getValue().toString();
             }
         }
-        throw new FakeSimpleTableException("id attribute not found for primary key " + key);
+        throw new FakeTableException("id attribute not found for primary key " + key);
     }
 
 }
