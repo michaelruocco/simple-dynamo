@@ -82,7 +82,7 @@ uploadArchives {
                 description 'Library containing useful classes for interacting and testing with Dynamo DB'
                 groupId 'com.github.michaelruocco'
                 artifactId 'simple-dynamo'
-                version '2.0.0'
+                version '3.0.0'
                 url 'https://github.com/michaelruocco/simple-dynamo'
 
                 developers {
