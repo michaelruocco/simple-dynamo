@@ -1,6 +1,7 @@
 package uk.co.mruoc.dynamo.test;
 
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import org.junit.Test;
 import uk.co.mruoc.dynamo.Items;
 
@@ -97,12 +98,24 @@ public class FakeTableTest {
         assertThat(table.getLastStartKey()).isEqualTo(startKey);
     }
 
-    @Test(expected = FakeTableException.class)
-    public void shouldThrowExceptionIfSetItemToReturnWithIdFieldNameNotSet() {
+    @Test
+    public void shouldReturnItemIfSetItemToReturnWithIdFieldName() {
         FakeItem expectedItem = new FakeItem("my-id", "{}");
         table.setItemToReturnForId(expectedItem.getIdAsString(), expectedItem);
 
-        table.get(expectedItem.getIdAsString());
+        Item item = table.get(expectedItem.getIdAsString());
+
+        assertThat(item).isEqualTo(expectedItem);
+    }
+
+    @Test(expected = FakeTableException.class)
+    public void shouldThrowExceptionIfSetItemToReturnWithIdDoesNotMatchIdFieldName() {
+        FakeItem expectedItem = new FakeItem("my-id", "{}");
+        PrimaryKey key = new PrimaryKey("id", "my-id");
+        table.setIdFieldName("another-id-name");
+        table.setItemToReturnForId(expectedItem.getIdAsString(), expectedItem);
+
+        table.get(key);
     }
 
     @Test

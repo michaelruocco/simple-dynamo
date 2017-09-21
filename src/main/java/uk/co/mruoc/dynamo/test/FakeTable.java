@@ -119,11 +119,11 @@ public class FakeTable implements DynamoTable {
         Iterator<KeyAttribute> attributes = key.getComponents().iterator();
         while(attributes.hasNext()) {
             KeyAttribute attribute = attributes.next();
-            if (attribute.getName().equals("id")) {
+            if (attribute.getName().equals(idFieldName)) {
                 return attribute.getValue().toString();
             }
         }
-        throw new FakeTableException("id attribute not found for primary key " + key);
+        throw new FakeTableException("id attribute " + idFieldName + " not found for primary key " + key);
     }
 
 }
