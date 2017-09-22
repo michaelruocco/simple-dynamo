@@ -14,6 +14,6 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:simple-dynamo:3.0.1'
+    compile 'com.github.michaelruocco:simple-dynamo:3.0.2'
 }
 ```
