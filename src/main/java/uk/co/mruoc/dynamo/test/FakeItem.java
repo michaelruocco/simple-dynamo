@@ -5,25 +5,32 @@ import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 
 public class FakeItem extends Item {
 
-    private static final String ID_FIELD_NAME = "id";
+    private static final String DEFAULT_ID_FIELD_NAME = "id";
     private static final String BODY_FIELD_NAME = "body";
 
+    private final String idFieldName;
+
     public FakeItem() {
-        this("1", "bodyValue");
+        this(DEFAULT_ID_FIELD_NAME, "1", "bodyValue");
     }
 
     public FakeItem(String id, String body) {
-        withPrimaryKey(ID_FIELD_NAME, id);
+        this(DEFAULT_ID_FIELD_NAME, id, body);
+    }
+
+    public FakeItem(String idFieldName, String id, String body) {
+        this.idFieldName = idFieldName;
+        withPrimaryKey(idFieldName, id);
         withString(BODY_FIELD_NAME, body);
     }
 
     public PrimaryKey getId() {
         String id = getIdAsString();
-        return new PrimaryKey(ID_FIELD_NAME, id);
+        return new PrimaryKey(idFieldName, id);
     }
 
     public String getIdAsString() {
-        return get(ID_FIELD_NAME).toString();
+        return get(idFieldName).toString();
     }
 
     public String getBody() {

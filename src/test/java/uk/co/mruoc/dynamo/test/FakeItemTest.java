@@ -55,4 +55,15 @@ public class FakeItemTest {
         assertThat(item.getBody()).isEqualTo(body);
     }
 
+    @Test
+    public void shouldAllowSettingCustomIdFieldName() {
+        String idFieldName = "my-id";
+        String idValue = "2";
+        String body = "customBody";
+
+        FakeItem item = new FakeItem(idFieldName, idValue, body);
+
+        assertThat(item.get(idFieldName)).isEqualTo(idValue);
+    }
+
 }
